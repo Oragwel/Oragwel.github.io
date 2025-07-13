@@ -17,14 +17,16 @@
   --nav-font: "Poppins",  sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+/* Global Colors - Professional color scheme for enhanced visual appeal */
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --default-color: #2c3e50; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #1a252f; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #3498db; /* Professional blue accent color that represents your brand */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds */
+  --secondary-accent: #2ecc71; /* Secondary accent color for highlights and success states */
+  --muted-color: #7f8c8d; /* Muted color for less important text */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -1301,123 +1303,225 @@ section,
   transition: background-color 0.3s ease;
 }
 
-.social-icon.twitter { background-color: #1da1f2; }
-.social-icon.facebook { background-color: #1877f2; }
-.social-icon.instagram { background-color: #e1306c; }
-.social-icon.linkedin { background-color: #0077b5; }
-
-.social-icon:hover {
-  opacity: 0.8;
+/* Professional Portfolio Styling */
+.portfolio-content {
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
 }
 
-.floating-social-bar {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
+.portfolio-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.social-icon {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background-color: #333;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.notification-window {
-  position: absolute;
-  bottom: 70px;
-  right: 0;
-  width: 250px;
-  max-height: 300px;
-  background-color: #333;
-  color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: none;
-  overflow-y: auto;
-  z-index: 1001;
-}
-
-.notification-window h4 {
-  margin-top: 0;
-  color: #fff;
-}
-
-.notification-window .post {
+.portfolio-info h4 {
+  color: var(--heading-color);
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-bottom: 15px;
-  padding: 10px;
-  background-color: #444;
-  border-radius: 5px;
 }
 
-.notification-window .like-btn,
-.notification-window .comment-btn {
-  background-color: #1da1f2;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  margin-right: 5px;
-  cursor: pointer;
-  border-radius: 3px;
+.portfolio-info p {
+  color: var(--muted-color);
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-.notification-window .comment-box {
-  width: 100%;
-  margin-top: 5px;
-  padding: 5px;
-  border-radius: 3px;
-  border: 1px solid #ddd;
+.portfolio-links .badge {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 500;
 }
 
-
-/* Notification Badge Styling */
-.notification-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  width: 20px;
-  height: 20px;
-  display: flex;
+/* Enhanced Social Links */
+.social-links a {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  font-weight: bold;
-}
-/* Notification Window Styling */
-.notification-window {
-  position: absolute;
-  bottom: 60px; /* Adjust based on your layout */
-  right: 60px; /* Adjust based on your layout */
-  width: 200px;
-  background-color: #333;
-  color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: none; /* Hidden by default */
-  z-index: 1001;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  font-size: 18px;
 }
 
-/* Position each notification window next to its respective icon */
-.social-icon {
-  position: relative;
+.social-links a.github {
+  background: #333;
+  color: white;
 }
 
-.notification-window p {
-  margin: 10px 0;
+.social-links a.linkedin {
+  background: #0077b5;
+  color: white;
+}
+
+.social-links a.email {
+  background: var(--accent-color);
+  color: white;
+}
+
+.social-links a.phone {
+  background: var(--secondary-accent);
+  color: white;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Professional Typography Enhancements */
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.resume-title {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+}
+
+/* Enhanced Stats Section */
+.stats-item {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stats-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stats-item i {
+  color: var(--accent-color);
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+/* Professional Footer Styling */
+.footer {
+  background: #f8f9fa;
+  padding: 60px 0 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.footer h5 {
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  color: var(--muted-color);
+  line-height: 1.6;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer ul li a {
+  color: var(--muted-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: var(--accent-color);
+}
+
+.footer .social-links a {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.footer hr {
+  border-color: #e9ecef;
+}
+
+.footer .copyright {
+  color: var(--muted-color);
+  font-size: 0.9rem;
+}
+
+/* Professional Hero Section Enhancements */
+.hero h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+/* Professional Button Styling */
+.btn-primary {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+}
+
+/* Professional Card Hover Effects */
+.service-item {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 30px;
+  background: var(--surface-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-item .icon {
+  color: var(--accent-color);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Testimonial Enhancements */
+.testimonial-item {
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
